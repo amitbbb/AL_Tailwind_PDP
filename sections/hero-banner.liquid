@@ -1,0 +1,77 @@
+
+<div data-section-id="{{ section.id }}" data-section-type="hero-section">
+  <div class="w-full h-full banner-slider" id="Hero-{{ section.id }}">
+    {%- for block in section.blocks -%}
+    {% if block.settings.image != blank %}  
+    <div class="banner-slide {% if forloop.index > 1 %}hidden{% endif %}">
+      <a href="{{ block.settings.main_url }}">
+        <img class="w-full max-h-[164px] sm:max-h-[420px] lg:max-h-[500px] xl:max-h-[684px] lazyload banner-img cover" loading="lazy"
+           src="{{ block.settings.image | img_url: "master" }}"
+           data-src="{{ block.settings.image | img_url: "master" }}"
+           data-widths="[180, 360, 470, 600, 770, 970, 1060, 1280, 1512, 1728, 2048]"
+           data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+           data-sizes="auto" height="100" width="100"
+           alt="{{ block.settings.title | escape }}">
+      </a>
+    </div>
+  {% endif %}
+  {% endfor %}
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('.banner-slider').slick({
+      infinite: false,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      fade:true,
+      autoplay: true,
+      speed: 800
+    });
+    $('.banner-slider > .banner-slide').removeClass('hidden');
+
+  });
+</script>
+{% schema %}
+{
+  "name": {
+    "en": "Hero Banner"
+  },
+  "class": "index-section index-section--flush hero-banner",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "Slides",
+      "name": "Banner Slides",
+    "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "main_url",
+      "label": "Main URL"
+    }
+  ]
+ }
+],
+  "presets": [
+    {
+      "name": {
+        "en": "Hero Banner"
+      },
+      "category": {
+        "en": "Image"
+
+      }
+    }
+  ]
+}
+{% endschema %}
+{% stylesheet %}
+ 
+{% endstylesheet %}

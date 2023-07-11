@@ -1,0 +1,82 @@
+<section id="categories" class="m-0 p-0">
+  <div class="categories w-full pt-[80px] px-0 bg-[#f4f0ec] md:px-[60px]">
+    <h2 class="text-[30px] leading-[37px] uppercase font-compacta font-normal text-right pr-[20px] pb-[40px] m-0 md:text-[45px] md:leading-[55px]">{{ section.settings.heading }}</h2>
+    <ul class="cat-list flex flex-wrap">
+      {% for block in section.blocks %}
+        <li class="w-full mb-[46px] md:w-1/2">
+          <a class="flex justify-between h-full bg-[#303C3C]" href="#">
+            <div class="cat-image w-1/2">
+              <img
+                class="w-full h-full block"
+                src="{{block.settings.image | img_url: 'master'}}"
+                alt=" "
+                loading="lazy" />
+            </div>
+            <div class="cat-content w-1/2 relative">
+              <h3 class="w-full absolute text-[30px] leading-normal uppercase text-center text-[#F8E5CF] font-compacta font-normal bottom-[15px] left-[50%] -translate-x-[50%] md:text-[34px] md:bottom-[30px]">{{ block.settings.cat-heading }}</h3>
+              <div class="cat-lines mt-[40px]">
+                <p class="text-[20px] leading-[34px] text-[#F8E5CF] font-kepler font-light lowercase m-0 italic max-w-[90%] h-[45px] m-auto md:text-[30px] md:max-w-[63%]">{{ block.settings.first-para }}</p>
+                <p class="absolute top-[105px] right-[40px] text-[20px] leading-[34px] text-[#F8E5CF] font-kepler font-light lowercase m-0 italic max-w-[90%] h-[45px] m-auto md:text-[30px] md:max-w-[63%] md:top-[165px] md:right-[85px]">{{ block.settings.second-para }}</p>
+                <p class="absolute top-[130px] right-[90px] text-[20px] leading-[34px] text-[#F8E5CF] font-kepler font-light lowercase m-0 italic max-w-[90%] h-[45px] m-auto md:text-[30px] md:max-w-[63%] md:top-[210px] md:right-[105px]">{{ block.settings.third-para }}</p>
+              </div>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Categories Section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Title"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Categories",
+        "type": "categories",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Category Image"
+          },
+          {
+            "type": "text",
+            "id": "cat-heading",
+            "label": "Category Heading"
+          },
+          {
+            "type": "text",
+            "id": "first-para",
+            "label": "Paragraph One"
+          },
+          {
+            "type": "text",
+            "id": "second-para",
+            "label": "Paragraph Two"
+          }, {
+            "type": "text",
+            "id": "third-para",
+            "label": "Paragraph Third"
+          }
+
+        ]
+
+      }
+    ],
+    "presets": [
+      {
+        "name": "Categories Section",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

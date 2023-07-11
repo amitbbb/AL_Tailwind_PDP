@@ -1,0 +1,160 @@
+{
+  "sections": {
+    "590da8a9-6d72-45c2-87c3-d83ac00039de": {
+      "type": "custom-products",
+      "settings": {
+      }
+    },
+    "614aceb4-fbe2-4e2c-bc25-1b6de73da40b": {
+      "type": "hero-banner",
+      "blocks": {
+        "9b7b199c-1e71-4261-9ac1-230225e3299a": {
+          "type": "Slides",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/unnamed_720x_6c41be45-5015-4437-8c7a-365a628a9b75.jpg",
+            "main_url": ""
+          }
+        },
+        "eec118f8-8140-4fb7-a212-02be490323d2": {
+          "type": "Slides",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/unnamed_1296x_710bbcb5-82a3-4a40-b4da-721f7f7a359c.jpg",
+            "main_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "9b7b199c-1e71-4261-9ac1-230225e3299a",
+        "eec118f8-8140-4fb7-a212-02be490323d2"
+      ],
+      "settings": {
+      }
+    },
+    "88474b7c-c760-4fd2-822f-ef1ee8f7d650": {
+      "type": "best-slider-section_slick",
+      "settings": {
+        "heading": "NEW",
+        "collection": "new-collection"
+      }
+    },
+    "c786b894-d292-4954-adfe-858cf865f25d": {
+      "type": "shop-vibe",
+      "blocks": {
+        "8f9418bc-c3de-4693-9f9e-f87d39ad20ce": {
+          "type": "collection",
+          "settings": {
+            "name": "Modern",
+            "image": "shopify:\/\/shop_images\/Bookend-Laguna2-Medium_1c1a92a8-294e-4250-8c50-ef6ab6537515_1.png",
+            "collection_url": ""
+          }
+        },
+        "6374b88e-272d-4bcb-be7a-0c618e6f22eb": {
+          "type": "collection",
+          "settings": {
+            "name": "Classic",
+            "image": "shopify:\/\/shop_images\/cb80432769889ae6f6970112b793b3e6_1024x1024_1_720x_b551ac46-ca6d-4c08-987d-44475d285e10.jpg",
+            "collection_url": ""
+          }
+        },
+        "90d2e034-1a31-4081-bf6d-2a2be79d4a19": {
+          "type": "collection",
+          "settings": {
+            "name": "Minimalist",
+            "image": "shopify:\/\/shop_images\/1a72bafab291e5642e00cfa73f5b29e2_1024x1024_1_720x_3a73ae67-dcdc-4bbf-a2f4-6b6ee730aced.jpg",
+            "collection_url": ""
+          }
+        },
+        "1e75c102-125a-4c18-aca9-d285b04a4632": {
+          "type": "collection",
+          "settings": {
+            "name": "Cool",
+            "image": "shopify:\/\/shop_images\/2_e7b1c80e-cfdd-4356-832c-a15d6dd15adf.webp",
+            "collection_url": ""
+          }
+        },
+        "764807b4-4d07-449a-be2a-605d651af3b6": {
+          "type": "collection",
+          "settings": {
+            "name": "Handmade",
+            "image": "shopify:\/\/shop_images\/anglepoise-oiginal-1227-giant-citrus-yellowLarge_1.png",
+            "collection_url": ""
+          }
+        },
+        "09146143-cfc0-4e7d-8bd0-5936b1cd1cab": {
+          "type": "collection",
+          "settings": {
+            "name": "Essential",
+            "image": "shopify:\/\/shop_images\/202209-842_03_1.png",
+            "collection_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "8f9418bc-c3de-4693-9f9e-f87d39ad20ce",
+        "6374b88e-272d-4bcb-be7a-0c618e6f22eb",
+        "90d2e034-1a31-4081-bf6d-2a2be79d4a19",
+        "1e75c102-125a-4c18-aca9-d285b04a4632",
+        "764807b4-4d07-449a-be2a-605d651af3b6",
+        "09146143-cfc0-4e7d-8bd0-5936b1cd1cab"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "b95ac6d3-068c-4d83-8272-599dd9fbc2cc": {
+      "type": "category-section_v2",
+      "blocks": {
+        "25760fe8-767b-4178-a89e-256ccb0ecc21": {
+          "type": "Category",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Bookend-Laguna2-Medium_1c1a92a8-294e-4250-8c50-ef6ab6537515_1.png",
+            "heading": "TORTUGA FORMA",
+            "text": "New colors in planters, coasters and everyone’s favorite bookends are here.",
+            "url": ""
+          }
+        },
+        "20458ad5-1a9e-447d-8a53-f1997eecc2d3": {
+          "type": "Category",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ServingFriendsBoard-Silo-02-SLSFBL_b4fc0019-9860-429c-b5ad-43f0db78d20c_1.png",
+            "heading": "AREAWARE",
+            "text": "Explore the Spring ’23 releases",
+            "url": ""
+          }
+        },
+        "33d55b66-36d6-495a-bd3a-105afaa5826c": {
+          "type": "Category",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shinwhite_1.png",
+            "heading": "LEMNOS",
+            "text": "The most beautiful shoe horn in the world?",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "25760fe8-767b-4178-a89e-256ccb0ecc21",
+        "20458ad5-1a9e-447d-8a53-f1997eecc2d3",
+        "33d55b66-36d6-495a-bd3a-105afaa5826c"
+      ],
+      "settings": {
+        "heading": "New Colors In Planters, Coasters And Everyone's Favorite Bookends Are Here"
+      }
+    },
+    "7f278b7f-ee23-49cd-afef-df9ec6f8d001": {
+      "type": "best-slider-section_slick",
+      "settings": {
+        "heading": "Best Slider",
+        "collection": "new-collection"
+      }
+    }
+  },
+  "order": [
+    "590da8a9-6d72-45c2-87c3-d83ac00039de",
+    "614aceb4-fbe2-4e2c-bc25-1b6de73da40b",
+    "88474b7c-c760-4fd2-822f-ef1ee8f7d650",
+    "c786b894-d292-4954-adfe-858cf865f25d",
+    "b95ac6d3-068c-4d83-8272-599dd9fbc2cc",
+    "7f278b7f-ee23-49cd-afef-df9ec6f8d001"
+  ]
+}

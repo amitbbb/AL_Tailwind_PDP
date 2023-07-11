@@ -1,0 +1,83 @@
+<section id="new_slider_section">
+  <div class="relative new_slider_section  lg:pt-[90px] pb-0 md:px-[30px] xs:py-[40px] xs:px-[20px] bg-[#f4f0ec]">
+    {% if section.settings.heading != blank %}
+      <h1 class="font-[Compacta] uppercase text-right lg:text-[45px] md:text-[30px] xs:text-[23px] xs:leading[43.8px] xs:mb-[15px]">
+        {{ section.settings.heading }}</h1>
+    {% endif %}
+    {% assign collection_main = collections[section.settings.collection] %}
+    <div class="new-slick-slider flex flex-wrap sm:px-[10px]" id="{{section.id}}">
+      {% for product in collection_main.products %}
+        <div class="product-grid w-1/2 lg:w-1/4 xl:w-1/5 me:w-1/4 px-[15px]">
+          <a href="{{ product.url }}" class="block">
+            <div class="pink-hover relative">
+              <img
+                src="{{ product | img_url: 'master' }}"
+                alt="{{ product.title }}"
+                class="mx-auto w-full" />
+            </div>
+            <div class="product_content xs:mt-[18px]">
+              <p class="flex justify-between items-start xs:text-[15px] md:text-[18px] xs:leading-[normal] uppercase font-['Kepler']">
+                <span class="text-[#242d2d] xs:text-[15px] md:text-[18px] xs:leading-[normal] uppercase font-['Kepler']">{{ product.vendor }}</span>
+                <span class="text-[#242d2d] xs:text-[15px] md:text-[18px] xs:leading-[normal] uppercase font-['Kepler']">{{ product.price | money }}</span>
+              </p>
+              <p class="xs:text-[15px] md:text-[18px] capitalize leading-normal flex xs:mt-[5px] text-black">{{ product.title | capitalize }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <style></style>
+    <script>
+      $(document).ready(function() {
+        $('#{{section.id}}').slick({
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          arrows: true,
+          speed: 800,
+          responsive: [
+            {
+              breakpoint: 1100,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1
+              }
+            }, {
+              breakpoint: 900,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+              }
+            }
+          ]
+        });
+        $('#{{section.id}} > .product-grid').removeClass('hidden');
+
+      });
+    </script>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Best Seller Slider_Slick",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Slider Title"
+      }, {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collections"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Best Seller Slider_Slick",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,87 @@
+<section id="stories">
+    <div class="container">
+        <div class="content">
+            {% if section.settings.heading != blank %}
+            <h2>{{section.settings.heading}}</h2>
+            {% endif %}
+            {% for block in section.blocks %}
+            <div class="story">
+                <div class="story-image">
+                    <img src="{{block.settings.image | img_url: 'master' }}" alt="" />
+                </div>
+                <div class="story-content">
+                    <h3 class="story-title">{{block.settings.story-title}}</h3>
+                    <p class="subtitle">{{block.settings.sub-title}}</p>
+                    <a href="{{block.settings.url}}" class="read-more">{{block.settings.read-story}}</a>
+                </div>
+            </div>
+            {% endfor %}
+            <a href="{{section.settings.btn-url}}" class="view-all-stories">{{section.settings.btn-title}}</a>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Stories Section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Title"
+      },
+      {
+        "type": "text",
+        "id": "btn-title",
+        "label": "Button Title"
+      },
+      {
+        "type": "url",
+        "id": "btn-url",
+        "label": "Button Title"
+      }
+    ],
+    "blocks": [
+     {
+       "name": "Stories",
+       "type": "stories",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+         {
+            "type": "text",
+            "id": "story-title",
+            "label": "Story Title"
+         },
+         {
+            "type": "text",
+            "id": "sub-title",
+            "label": "Sub-Title"
+         },
+         {
+            "type": "text",
+            "id": "read-story",
+            "label": "Link Title"
+         },
+         {
+            "type": "url",
+            "id": "url",
+            "label": "Story Url"
+         }
+       ]
+     }
+  ],
+    "presets": [
+      {
+        "name": "Stories Section",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}

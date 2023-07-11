@@ -1,0 +1,123 @@
+<section id="new_slider_section">
+  <div class="relative new_slider_section  lg:pt-[90px] pb-0 md:px-[80px] xs:py-[40px] xs:px-[20px] bg-[#f4f0ec]">
+    {% if section.settings.heading != blank %}
+      <h1 class="font-[Compacta] uppercase text-right lg:text-[45px] md:text-[30px] xs:text-[23px] xs:leading[43.8px] xs:mb-[15px]">
+        {{ section.settings.heading }}</h1>
+    {% endif %}
+    {% assign collection_main = collections[section.settings.collection] %}
+    <div class="keen-slider relative flex justify-between opacity-0" id="{{section.id}}">
+      {% for product in collection_main.products %}
+        <div class="keen-slider__slide w-[calc(20%-30px)]">
+          <a href="{{ product.url }}" class="block">
+            <img
+              src="{{ product | img_url: 'master' }}"
+              alt="{{ product.title }}"
+              class="mx-auto w-full" />
+            <div class="product_content xs:mt-[18px]">
+              <p class="flex justify-between items-start xs:text-[15px] md:text-[18px] xs:leading-[normal] uppercase font-['Kepler']">
+                <span class="text-[#242d2d] xs:text-[15px] md:text-[18px] xs:leading-[normal] uppercase font-['Kepler']">{{ product.vendor }}</span>
+                <span class="text-[#242d2d] xs:text-[15px] md:text-[18px] xs:leading-[normal] uppercase font-['Kepler']">{{ product.price | money }}</span>
+              </p>
+              <p class="xs:text-[15px] md:text-[18px] capitalize leading-normal flex xs:mt-[5px] text-black">{{ product.title | capitalize }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+      <p class="arrow arrow--left">Previous</p>
+      <p class="arrow arrow--right">Next</p>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const slider = new KeenSlider("{{'#'}}{{section.id}}", {
+          loop: false,
+          slides: {
+            perView: 2,
+            spacing: 20
+          },
+          breakpoints: {
+            '(min-width: 769px)': {
+              slides: {
+                perView: 3,
+                spacing: 30
+              }
+            },
+            '(min-width: 1024px)': {
+              slides: {
+                perView: 5,
+                spacing: 30
+              }
+            }
+          }
+        });
+
+        const arrowLeft = document.querySelector('.arrow--left');
+        const arrowRight = document.querySelector('.arrow--right');
+
+        arrowLeft.addEventListener('click', () => {
+          slider.prev();
+        });
+
+        arrowRight.addEventListener('click', () => {
+          slider.next();
+        });
+
+        const kslider = document.getElementById('{{section.id}}');
+        kslider.classList.remove('opacity-0');
+        kslider.classList.add('opacity-100');
+      });
+    </script>
+
+    <style>
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        font-size: 0;
+        cursor: pointer;
+        background-image: url('https://afternoonlight.com/cdn/shop/t/56/assets/arrow-right.png?v=1664261596') !important;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 35px;
+        width: 18px;
+        top: 53%;
+      }
+
+      .arrow--left {
+        left: 30px;
+        background-image: url('https://afternoonlight.com/cdn/shop/t/56/assets/arrow-left.png?v=1664261587') !important;
+      }
+
+      .arrow--right {
+        right: 30px;
+      }
+    </style>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Best Seller Slider",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Slider Title"
+      }, {
+        "id": "collection",
+        "type": "collection",
+        "label": "Collections"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Best Seller Slider",
+        "settings": {}
+      }
+    ]
+  }
+{% endschema %}

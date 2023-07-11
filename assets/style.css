@@ -1,0 +1,238 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities; 
+
+@font-face {
+    font-family: 'Compacta';
+    src: url('./Compacta.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Kepler';
+    src: url('KeplerStd-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tungsten-Book';
+    src: url('Tungsten-Book.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'KeplerLight';
+    src: url('KeplerLight.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+
+@layer base {
+    h1,h2,h3,h4,h5,h6 {
+      font-family: 'Compacta,Assistant, sans-serif';
+    }
+    p{
+        font-family: 'Kepler';
+    }
+  } 
+body{
+    color: #242d2d!important;
+}
+.product button.slick-prev {
+    right: -45px;
+    top: 46%;
+    left: unset;
+    border-left: 2px solid #000;
+    border-top: 2px solid #000;
+    z-index: 9;
+    transform: rotate(45deg) skew(14deg, 14deg) translateY(-50%);
+    position: absolute;
+    display: block;
+    height: 25px;
+    width: 25px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: #000;
+}
+
+
+.product button.slick-next {
+    right: -58px;
+    bottom: 46%;
+    border-left: 2px solid #000;
+    border-top: 2px solid #000;
+    z-index: 9;
+    transform: rotate(-135deg) skew(14deg, 14deg) translateY(-50%);
+    position: absolute;
+    display: block;
+    height: 25px;
+    width: 25px;
+    line-height: 0px;
+    font-size: 0px;
+    cursor: pointer;
+    background: transparent;
+    color: #000;
+}
+
+
+.index button.slick-prev {
+    background-image: url("https://cdn.shopify.com/s/files/1/0654/5892/9887/files/arrow-left.png?v=1688122222")!important;
+    background-size: 100%!important;
+    background-repeat: no-repeat!important;
+    position: absolute;
+    left: -5px;
+    right: unset;
+    z-index: 99;
+    height: 20px;
+    width: 10px;
+    top: 15.5vw;
+}
+
+
+.index button.slick-next {
+    background-image: url("https://cdn.shopify.com/s/files/1/0654/5892/9887/files/arrow-right.png?v=1688122215")!important;
+    background-size: 100%!important;
+    background-repeat: no-repeat!important;
+    position: absolute!important;
+    right: -5px;
+    transform: translateY(-50%);
+    left: unset;
+    height: 20px;
+    width: 10px;
+    top: 15.5vw;
+}
+.pink-hover:before{
+    background: transparent;
+    opacity: .5;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s ease-in-out;
+}
+.pink-hover:hover::before{
+    background: #BC6D95;
+    opacity: .3;
+}
+
+.new_slider {
+    padding: 0 30px;
+}
+.slick-arrow:before{
+    display: none;
+}
+.banner-slider.slick-dotted.slick-slider{
+    margin-bottom: 0!important;
+}
+
+.banner-slider .slick-dots{
+    z-index: 99;
+}
+.banner-slider .slick-dots li{
+    height: 14px;
+    width: 14px;
+    padding: 5px;
+    opacity: 0.5;
+}
+.shop-vibe{
+    padding: 40px 15px;
+    background-color: #f4f0ec;
+}
+.banner-slider .slick-dots li.slick-active{
+    opacity: 1;
+}
+.banner-slider .slick-dots li button{
+    background: #717171;
+    border-radius: 100%;
+    height: 14px;
+    width: 14px;
+    margin-left: 5px;
+}
+
+.new-slick-slider .slick-slide:nth-child(n+2) {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.new-slick-slider > .product-grid:nth-child(n+6) {
+    display: none;
+}
+
+
+/*Product Page*/
+
+
+
+
+
+/*Product Page end*/
+@media screen and (max-width: 1100px){
+    .new-slick-slider > .product-grid:nth-child(n+5) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .new-slick-slider > .product-grid:nth-child(n+3) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .new-slick-slider > .product-grid:nth-child(n+3) {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .index button.slick-prev{
+        height: 35px;
+        width: 18px;
+        top: 19vw;
+        left: -15px;
+    }
+    .index button.slick-next{
+        height: 35px;
+        width: 18px;
+        top: 19vw;
+        right: -15px;
+    }
+    .shop-vibe{
+        padding: 80px 45px 40px;
+    }
+}
+
+@media screen and (min-width: 900px){
+    .index button.slick-prev{
+        top: 9vw;
+        left: -10px;
+        height: 30px;
+        width: 15px;
+    }
+    .index button.slick-next{
+        top: 9vw;
+        right: -10px;
+        height: 30px;
+        width: 15px;
+    }
+
+}
+
+@media screen and (min-width: 1100px){
+    button.slick-prev{
+        top: 8vw;
+    }
+    .index button.slick-next{
+        top: 8vw;
+    }
+}
+
+
+
+
+
+
